@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ramil | Personal Portfolio</title>
+    <link rel="stylesheet" href="CSS/style.css" />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <a href="index.html">MR</a>
+        </div>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="#about" class="nav-link">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="#contact" class="nav-link">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a href="experience.html" class="nav-link">Experience</a>
+          </li>
+          <li class="nav-item">
+            <a href="experience.html#projects" class="nav-link">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a href="experience.html#education" class="nav-link">Education</a>
+          </li>
+          <li class="nav-item">
+            <a href="experience.html#certification" class="nav-link">Certification</a>
+          </li>
+        </ul>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <label for="nav-toggle" class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </label>
+      </div>
+    </nav>
+
+    <div class="page-container">
+    <div class="frame-line top-line"></div>
+    
+    <div class="frame-line left-line"></div>
+    <div class="frame-line right-line"></div>
+
+      <section class="hero-section">
+        <div class="hero-text">
+          <h1 class="tracking-in-expand">munim<br />ramil</h1>
+          <p >
+            Blockchain Developer | Web3 Enthusiast | Tech Explorer<br />
+            I build decentralized apps with Next.js, Solidity, and a hint of
+            coffee-fueled curiosity.
+          </p>
+        </div>
+
+        <div class="hero-image"></div>
+      </section>
+
+      <section id="about" class="about-section">
+        <h2>About Me</h2>
+        <p>
+          I'm a passionate blockchain developer with a knack for creating
+          decentralized applications. My journey in tech has been fueled by a
+          desire to explore the limitless possibilities of Web3 technologies.
+          When I'm not coding, you can find me experimenting with new frameworks
+          or diving into the latest trends in the blockchain space.
+        </p>
+      </section>
+
+      
+
+      <section class="skills-section">
+        <h2>Skills</h2>
+        <ul>
+          <li>Next.js</li>
+          <li>React</li>
+          <li>Solidity</li>
+          <li>Ethereum</li>
+          <li>Web3</li>
+          <li>Ether.js</li>
+          <li>Hardhat</li>
+          
+          <li>Tailwind CSS</li>
+          <li>Python</li>
+          <li>C++</li>
+          <li>C</li>
+          <li>Prisma</li>
+          <li>GSAP</li>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>React</li>
+          <li>Node.js</li>
+        </ul>
+      </section>
+
+      <section id="contact" class="contact-section">
+        <h2>Contact Me</h2>
+        <form id="contactForm" onsubmit="sendEmail(event)">
+          <div class="form-left">
+            <div>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+            </div>
+
+            <div>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+            </div>
+          </div>
+
+          <div class="form-right message-group">
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" required></textarea>
+          </div>
+
+          <div class="button-group">
+          <button type="submit">Send</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Navigation to Experience -->
+      <section class="navigation-section">
+        <a href="experience.html" class="experience-button">View Full Experience →</a>
+      </section>
+    </div>
+    <div class="frame-line bottom-line"></div>
+  </div>
+  
+  <script>
+    function sendEmail(event) {
+      event.preventDefault();
+      
+      const form = document.getElementById('contactForm');
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+      
+      // Validate form
+      if (!name || !email || !message) {
+        alert('Please fill in all fields');
+        return;
+      }
+      
+      // Validate email format
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        alert('Please enter a valid email address');
+        return;
+      }
+      
+      // Create mailto link
+      const subject = `Portfolio Contact from ${name}`;
+      const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+      const mailtoLink = `mailto:amramil.amr@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      
+      // Open default email client
+      window.open(mailtoLink);
+      
+      // Show success message
+      alert('Thank you for your message! Your email client should open with the message ready to send.');
+      
+      // Reset form
+      form.reset();
+    }
+  </script>
+  </body>
+</html>
